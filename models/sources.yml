@@ -10,4 +10,67 @@ sources:
         columns:
           - name: DateKey
             tests:
-              -unique
+              - unique
+  - name: dvp_fudgemart
+    database: raw
+    schema: dvp_fudgemart
+    tables:
+      - name: fm_customers
+        columns:
+          - name: Customer_id
+            tests:
+              - unique
+      - name: fm_creditcards
+        columns:
+          - name: creditcard_id
+            tests:
+              - unique        
+      - name: fm_customer_product_reviews
+        columns:
+          - name: Customer_id               
+      - name: fm_departments_lookup
+        columns:
+          - name: Department_id
+            tests:
+              - not_null
+      - name: fm_employees
+        columns:
+          - name: employee_id
+            tests:
+              - unique                  
+      - name: fm_employee_timesheets
+        columns:
+          - name: timesheet_id
+            tests:
+              - unique 
+      - name: fm_jobtitles_lookup
+        columns:
+          - name: jobtitle_id
+            tests:
+              - not_null
+      - name: fm_orders
+        columns:
+          - name: Order_id
+            tests:
+              - unique               
+      - name: fm_order_details
+        tests:
+         - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - Order_Id
+              - Product_Id
+
+      - name: fm_products
+        columns:
+          - name: Product_id
+            tests:
+              - unique
+      - name: FM_SHIPVIA_LOOKUP
+        columns:
+          - name: shipvia
+      - name: fm_vendors
+        columns:
+          - name: Vendor_id
+            tests:
+              - unique
+               
