@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fact_employee_pay_analysis
+    description: employee level fact table. Transaction One row per salaried employee
+    columns:
+      - name: employeekey
+        description: Source key used for drill through
+        tests:
+            - not_null
+      - name: timesheetpayrolldatekey
+        description: role play payroll Date Dimension key for dim_date
+      - name: totalwage
+        description: Employee wages that is calculated by (timesheet_hourlyrate * timesheethours)
+      - name: productprice
+        description: fact of difference between retail and wholsesale price of the product
+      - name: deltahourlyrates
+        description: Difference in employee_hourlywage and timesheet_hourlywage
+      - name: employeeterm
+        description: Number of days the employee is with the company (currentdate - employeehiredate )

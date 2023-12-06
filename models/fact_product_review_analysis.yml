@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_product_review_analysis
+    description: review level fact table. Transaction one row per review per product purchase per customer
+    columns:
+      - name: customerkey
+        description: Source key used for drill through
+        tests:
+            - not_null
+      - name: productkey
+        description: Dimension FK for dim_product
+      - name: reviewdatekey
+        description: role play Review Date  Dimension key for dim_date
+      - name: productrating
+        description: Average rating for a product
