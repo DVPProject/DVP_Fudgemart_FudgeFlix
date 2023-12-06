@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fact_sales_analysis
+    description: Order level fact table. Transaction One row per product_purchase  per customer
+    columns:
+      - name: orderid
+        description: Source key used for drill through
+      - name: customerkey
+        description: Dimension key for dim_customer
+      - name: orderdatekey
+        description: role play Order Date Dimension key for dim_date
+      - name: shippeddatekey
+        description: role play Shipped Date  Dimension key for dim_date
+      - name: productkey
+        description: Dimension FK for dim_product
+      - name: quantity
+        description: additive fact for total quantity of product sold on order
+      - name: productprice
+        description: fact of difference between retail and wholsesale price of the product
+      - name: daysfromordertoship
+        description: the number of days elapsed from order to shipped
+      - name: daysfromordertorequired
+        description: the number of days before the order is required 
+      - name: productactive
+        description: Boolean fact (Y/N) If product is active or not
+      - name: shippercompanyname
+        description: Degenerate dimension for shipper company
