@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_fact_product_review_analysis
+    description: Transaction fact table with one row per customer review
