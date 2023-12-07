@@ -21,6 +21,7 @@ stg_products as
 (
     select 
         product_id,
+        {{ dbt_utils.generate_surrogate_key(['product_id']) }} as productkey,
         product_retail_price,
         product_wholesale_price,
         product_is_active
@@ -28,9 +29,9 @@ stg_products as
 )
 select 
     o.*,
-    od.product_id as productkey,
+    p.productkey,
     od.orderquantity,
-    p.product_retail_price-product_wholesale_price as productprice,
+    p.product_retail_price - product_wholesale_price as productprice,
     o.shippeddatekey-o.orderdatekey as daysfromordertoship,
     p.product_is_active as productactive
 from stg_orders o
