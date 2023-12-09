@@ -14,6 +14,8 @@ models:
         description: role play Shipped Date  Dimension key for dim_date
       - name: productkey
         description: Dimension FK for dim_product
+      - name: orderquantity
+        description: total quantity of products in order
       - name: quantity
         description: additive fact for total quantity of product sold on order
       - name: productprice

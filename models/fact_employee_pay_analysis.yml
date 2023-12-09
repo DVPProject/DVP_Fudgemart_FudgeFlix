@@ -18,3 +18,7 @@ models:
         description: Difference in employee_hourlywage and timesheet_hourlywage
       - name: employeeterm
         description: Number of days the employee is with the company (currentdate - employeehiredate )
+      - name: employeename
+        description: Name of the employee
+      - name: Postion of the employee
+        description: Number of days the employee is with the company (currentdate - employeehiredate )
