@@ -5,6 +5,7 @@ with stg_employees as
         {{ dbt_utils.generate_surrogate_key(['employee_id']) }} as employeekey,
         employee_lastname,
         employee_firstname,
+        employee_department,
         employee_jobtitle,
         employee_hourlywage,
         employee_hiredate
@@ -23,6 +24,7 @@ stg_employee_timesheets as
 select
     t.employeekey,
     concat(e.employee_firstname,' ',e.employee_lastname) as employee_name,
+    employee_department,
     e.employee_jobtitle,
     t.timesheetpayrolldatekey,
     t.timesheet_hourlyrate*t.timesheet_hours as totalwage,
