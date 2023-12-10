@@ -74,4 +74,16 @@ sources:
           - name: Vendor_id
             tests:
               - unique
-               
+      - name: ff_accounts
+        columns:
+          - name: account_id
+            tests:
+              - unique 
+      - name: fm_account_billing
+        columns:
+          - name: account_billing_id
+            tests:
+              - unique  
+      - name: fudgemart_customer_survey
+        columns:
+          - name: email
