@@ -1,4 +1,4 @@
-with stg_accounts as 
+/*with stg_accounts as 
 (
     select
         account_id as accountskey
@@ -23,3 +23,4 @@ stg_customer_survey as
         income as customerincome
     from {{ source('dvp_fudgemart','fudgemart_customer_survey')}}
 )
+*/

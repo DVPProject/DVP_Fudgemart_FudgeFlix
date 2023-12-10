@@ -79,11 +79,16 @@ sources:
           - name: account_id
             tests:
               - unique 
-      - name: fm_account_billing
+      - name: ff_account_billing
         columns:
-          - name: account_billing_id
+          - name: ab_id
             tests:
               - unique  
       - name: fudgemart_customer_survey
         columns:
           - name: email
+      - name: ff_plans
+        columns:
+          - name: plan_id
+            tests:
+              - unique 

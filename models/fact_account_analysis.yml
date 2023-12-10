@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fact_account_analysis
+    description: Account level fact table. Periodic Snapshot one row per account details
